@@ -2,9 +2,8 @@
 //
 
 #include <iostream>
-#include "BinaryTree.h"
+#include "TreeMapNode.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
 }

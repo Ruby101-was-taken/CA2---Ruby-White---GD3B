@@ -213,7 +213,11 @@ void BinaryTree<T>::printInOrder()
 template<class T>
 void BinaryTree<T>::printInOrder(BSTNode<T> *node)
 {
-	
+	if (node->getLeft() != nullptr)
+		this->printInOrder(node->getLeft());
+	cout << node << endl;
+	if (node->getRight() != nullptr)
+		this->printInOrder(node->getRight());
 }
 
 template<class T>
@@ -225,8 +229,11 @@ void BinaryTree<T>::printPreOrder()
 template<class T>
 void BinaryTree<T>::printPreOrder(BSTNode<T> *node)
 {
-
-	
+	cout << node << endl;
+	if (node->getLeft() != nullptr)
+		this->printInOrder(node->getLeft());
+	if (node->getRight() != nullptr)
+		this->printInOrder(node->getRight());
 }
 
 template<class T>
@@ -238,5 +245,9 @@ void BinaryTree<T>::printPostOrder()
 template<class T>
 void BinaryTree<T>::printPostOrder(BSTNode<T> *node)
 {
-
+	if (node->getLeft() != nullptr)
+		this->printInOrder(node->getLeft());
+	if (node->getRight() != nullptr)
+		this->printInOrder(node->getRight());
+	cout << node << endl;
 }
