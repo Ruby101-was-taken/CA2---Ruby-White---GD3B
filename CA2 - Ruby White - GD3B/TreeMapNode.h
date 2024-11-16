@@ -10,6 +10,8 @@ public:
 		this->key = key;
 		this->value = value;
 	}
+	TreeMapNode() {
+	}
 
 	bool operator==(TreeMapNode<K, V>& node) { return this->key == node.key; }
 	bool operator<(TreeMapNode<K, V>& node) { return this->key < node.key; }
