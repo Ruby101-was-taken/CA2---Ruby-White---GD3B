@@ -1,0 +1,3 @@
+﻿  SplitWords.cpp
+MSVCRT.lib(exe_main.obj) : error LNK2001: unresolved external symbol main
+C:\Users\ruby_\Desktop\college\!Year THREE\dataStructs\CA2\CA2 - Ruby White - GD3B\x64\Release\SplitWords.exe : fatal error LNK1120: 1 unresolved externals

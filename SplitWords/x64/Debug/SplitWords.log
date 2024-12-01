@@ -1,0 +1,2 @@
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\ruby_\Desktop\college\!Year THREE\dataStructs\CA2\CA2 - Ruby White - GD3B\x64\Debug\SplitWords.exe : fatal error LNK1120: 1 unresolved externals
