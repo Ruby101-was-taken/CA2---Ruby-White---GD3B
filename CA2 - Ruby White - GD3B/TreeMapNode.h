@@ -22,9 +22,8 @@ public:
 	bool operator<(TreeMapNode<K, V>& node) { return this->key < node.key; }
 	bool operator>(TreeMapNode<K, V>& node) { return this->key > node.key; }
 
-	template <class K, class V>
-	friend std::ostream& operator<< (std::ostream& out, const TreeMapNode<K, V>& node) {
-		out << "{'" << node.key << "': " << node.value << "}";
+	friend std::ostream& operator<<(std::ostream& out, const TreeMapNode<K, V>& node) {
+		out << "{'" << node.key << "':\t" << node.value << "}";
 		return out;
 	}
 };

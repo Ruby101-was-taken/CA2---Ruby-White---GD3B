@@ -1,0 +1,5 @@
+#pragma once
+
+enum IndexKeys {
+	NAME, TIMES_PLAYED_SONIC2, FAVOURITE_NUMBER, HATED_NUMBER, SKILL_LEVEL
+};

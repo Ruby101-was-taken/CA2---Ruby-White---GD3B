@@ -34,8 +34,8 @@ void attemptWordAdd(std::string& word, TreeMap<char, BinaryTree<std::string>>& w
 		wordsTree.put(keyChar, BinaryTree<std::string>());
 		addWordToTree(keyChar, word, wordsTree, careForCases);
 	}
-	else if(!wordsTree.get(keyChar).contains(word))
-		addWordToTree(keyChar, word, wordsTree, careForCases);
+	
+	addWordToTree(keyChar, word, wordsTree, careForCases);
 }
 
 TreeMap<char, BinaryTree<std::string>> SplitFile(const std::string& fileName, const bool careForCases = true, const bool includeNonAlphaNumericChatacter = false) {
@@ -78,7 +78,12 @@ void SplitLoop(TreeMap<char, BinaryTree<std::string>>& treeMap) {
 			std::string userInput;
 			std::cout << "Enter the char you want to view.(Case Sensative)\n> ";
 			std::cin >> userInput;
-			std::cout << "\n{" << treeMap[userInput[0]] << "}\n" << std::endl;
+			try {
+				std::cout << "\n{" << treeMap[userInput[0]] << "}\n" << std::endl;
+			}
+			catch(const std::logic_error&) {
+				std::cout << "No words found for key " << userInput[0] << ".\n" << std::endl;
+			}
 			break;
 		}
 		case 2: {
@@ -99,7 +104,7 @@ void SplitLoop(TreeMap<char, BinaryTree<std::string>>& treeMap) {
 
 std::string getFileName() {
 	std::string fileName = "";
-	std::cout << "Enter File Name (include file extension):\n> ";
+	std::cout << "Enter File Name (include file extension):\n'test.txt' and 'data.csv' are both avaiable default files.\n> ";
 	std::cin >> fileName;
 	return fileName;
 }
@@ -129,11 +134,11 @@ void ExecuteSplit(const std::string fileName, const bool careForCases, const boo
 	SplitLoop(split);
 }
 
-void SplitMain() {
+void SplitTextFileMain() {
 
 	bool run = true;
 	while(run) {
-		std::cout << "1: Load File. (Loads a file and shows the output)\n2: Load File Advanced. (Loads a file with more settings)\n0: Quit. (Returns to the Main Menu)\n> ";
+		std::cout << "===== LOAD TXT =====\n1: Load File. (Loads a file and shows the output)\n2: Load File Advanced. (Loads a file with more settings)\n0: Quit. (Returns to the Main Menu)\n> ";
 		int ans = 0;
 		std::cin >> ans;
 		switch(ans) {

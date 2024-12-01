@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SplitWords", "SplitWords\Sp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test Tree Map", "UnitTest1\UnitTest1.vcxproj", "{05FE7893-2B35-45C0-9DAB-C4AC59E74850}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadCSV", "ReadCSV\ReadCSV.vcxproj", "{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{05FE7893-2B35-45C0-9DAB-C4AC59E74850}.Release|x64.Build.0 = Release|x64
 		{05FE7893-2B35-45C0-9DAB-C4AC59E74850}.Release|x86.ActiveCfg = Release|Win32
 		{05FE7893-2B35-45C0-9DAB-C4AC59E74850}.Release|x86.Build.0 = Release|Win32
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Debug|x64.ActiveCfg = Debug|x64
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Debug|x64.Build.0 = Debug|x64
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Debug|x86.Build.0 = Debug|Win32
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Release|x64.ActiveCfg = Release|x64
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Release|x64.Build.0 = Release|x64
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Release|x86.ActiveCfg = Release|Win32
+		{FCE6C3A0-3873-44A1-8CAF-6791CD7591AD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
