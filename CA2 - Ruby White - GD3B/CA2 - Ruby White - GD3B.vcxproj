@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="BSTNode.h" />
+    <ClInclude Include="generalFunctions.h" />
     <ClInclude Include="TreeMap.h" />
     <ClInclude Include="TreeMapNode.h" />
   </ItemGroup>

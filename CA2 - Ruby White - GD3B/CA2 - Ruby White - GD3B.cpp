@@ -2,18 +2,24 @@
 //
 
 #include <iostream>
-#include "TreeMapNode.h"
+#include <fstream>
+#include <sstream>
 #include "BinaryTree.h"
 #include "TreeMap.h"
+#include <string>
+#include "generalFunctions.h"
 
-int main()
-{
-	TreeMap<std::string, int> test;
-	test.put("funny", 3);
-	test.put("rub", 3);
-	test.put("abc", 3);
-	std::cout << test.contains("funny") << std::endl;
-	std::cout << test.contains("rub") << std::endl;
-	std::cout << test.contains("abc") << std::endl;
-	std::cout << test.contains("sad") << std::endl;
+#include "BSTNode.h"
+#include "TreeMapNode.h"
+
+#include "../SplitWords/SplitWords.h"
+
+
+int main() {
+	std::cout << "Enter the number beside an option to chose the option." << std::endl;
+
+	SplitMain();
+
+	return 0;
 }
+	

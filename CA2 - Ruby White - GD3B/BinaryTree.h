@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "BSTNode.h"
+#include <iostream>
 
 #include <vector>
 template <class T>
@@ -16,6 +17,7 @@ public:
 	void clear();
 	int count();
 	T& get(T& item);
+	bool contains(T& item);
 
 	void printInOrder();
 	void printInOrder(BSTNode<T> *node);
@@ -25,6 +27,13 @@ public:
 	void printPostOrder(BSTNode<T> *node);
 	T* toArray();
 	~BinaryTree();
+
+	void outInOrder(std::ostream& out, BSTNode<T>* node) const;
+	
+	friend std::ostream& operator<< (std::ostream& out, const BinaryTree<T>& tree) {
+		tree.outInOrder(out, tree.root);
+		return out;
+	}
 };
 
 template <class T>
@@ -152,9 +161,7 @@ T& BinaryTree<T>::get(T& item)
 {
 	bool found = false;
 	BSTNode<T>* current = root;
-	while (!found)
-	{
-	
+	while (!found) {
 		if (current == nullptr)
 			break;
 		if (current->getItem() == item)
@@ -165,6 +172,22 @@ T& BinaryTree<T>::get(T& item)
 			current = current->getRight();
 	}
 	throw logic_error("ITem not found");
+}
+template <class T>
+bool BinaryTree<T>::contains(T& item) {
+	bool found = false;
+	BSTNode<T>* current = root;
+	while(!found) {
+		if(current == nullptr)
+			break;
+		if(current->getItem() == item)
+			return true;
+		else if(current->getItem() > item)
+			current = current->getLeft();
+		else
+			current = current->getRight();
+	}
+	return false;
 }
 template <class T>
 void BinaryTree<T>::addItemToArray(BSTNode<T>* node, int &pos, T *arr)
@@ -215,7 +238,7 @@ void BinaryTree<T>::printInOrder(BSTNode<T> *node)
 {
 	if (node->getLeft() != nullptr)
 		this->printInOrder(node->getLeft());
-	cout << node << endl;
+	cout << node->getItem() << endl;
 	if (node->getRight() != nullptr)
 		this->printInOrder(node->getRight());
 }
@@ -229,7 +252,7 @@ void BinaryTree<T>::printPreOrder()
 template<class T>
 void BinaryTree<T>::printPreOrder(BSTNode<T> *node)
 {
-	cout << node << endl;
+	cout << node->getItem() << endl;
 	if (node->getLeft() != nullptr)
 		this->printInOrder(node->getLeft());
 	if (node->getRight() != nullptr)
@@ -249,5 +272,25 @@ void BinaryTree<T>::printPostOrder(BSTNode<T> *node)
 		this->printInOrder(node->getLeft());
 	if (node->getRight() != nullptr)
 		this->printInOrder(node->getRight());
-	cout << node << endl;
+	cout << node->getItem() << endl;
 }
+
+
+template<class T>
+void BinaryTree<T>::outInOrder(std::ostream& out, BSTNode<T>* node) const {
+	if(node->getLeft() != nullptr) {
+		this->outInOrder(out, node->getLeft());
+		out << ", ";
+	}
+	out << node->getItem();
+	if(node->getRight() != nullptr) {
+		out << ", ";
+		this->outInOrder(out, node->getRight());
+	}
+}
+
+//template <class T>
+//std::ostream& operator<<(std::ostream& out, const BinaryTree<T>& bTree) {
+//	bTree.outInOrder(out, bTree.root);
+//	return out;
+//}

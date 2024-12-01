@@ -32,5 +32,8 @@
     <ClInclude Include="TreeMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="generalFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

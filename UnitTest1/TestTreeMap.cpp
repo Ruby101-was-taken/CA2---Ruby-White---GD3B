@@ -66,5 +66,9 @@ namespace TestTreeMap
 			Assert::IsFalse(node2 < node);
 			Assert::IsTrue(node < node2);
 		}
+
+		TEST_METHOD(TestGet) {
+
+		}
 	};
 }

@@ -27,31 +27,32 @@ public:
 	T& getItem();
 	~BSTNode();
 
+
 };
 
 template <class T>
-BSTNode<T>::BSTNode(const BSTNode<T>& other)
-{
+BSTNode<T>::BSTNode(const BSTNode<T>& other) {
 	left = right = nullptr;
 	if(other.left != nullptr)
 		this->left = new BSTNode<T>(*other.left);
-	if(other.right!=nullptr)
+	if(other.right != nullptr)
 		this->right = new BSTNode<T>(*other.right);
-
+	this->data = other.data;
 }
+
 
 template <class T>
-BSTNode<T>* BSTNode<T>::operator=(const BSTNode<T>& other)
-{
-	if (this == &other)
+BSTNode<T>* BSTNode<T>::operator=(const BSTNode<T>& other) {
+	if(this == &other)
 		return *this;
 	left = right = nullptr;
-	if (other.left != nullptr)
+	if(other.left != nullptr)
 		this->left = new BSTNode<T>(*other.left);
-	if (other.right != nullptr)
+	if(other.right != nullptr)
 		this->right = new BSTNode<T>(*other.right);
-	
+	this->data = other.data;
 }
+
 template <class T>
 BSTNode<T>::~BSTNode()
 {
@@ -136,6 +137,7 @@ void BSTNode<T>::add(T& item)
 {
 	if (item == this->data)
 	{
+		this->data = item;
 		return;
 	}
 	else if (item < this->data)
@@ -171,4 +173,5 @@ void BSTNode<T>::setItem(T item)
 {
 	this->data = item;
 }
+
 
